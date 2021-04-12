@@ -17,16 +17,17 @@
               <ion-input name="password" formControlName = 'password' type="password" placeholder="Password" ngModel required></ion-input>
             </ion-item>
           </div>
+          <ion-badge color="medium">{{errorMessage}}</ion-badge>
           <div padding>
-            <ion-button size="large" type="submit" [disabled] = '!this.form.valid' expand="block">Login</ion-button>
+            <ion-button size="large" type="submit" [disabled] = '!this.form.valid' expand="block" color="medium" >Login</ion-button>
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
 
+ 
 
-  <p>{{errorMessage}}</p>
 </ion-content>
 
 
