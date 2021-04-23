@@ -56,6 +56,7 @@ export class PoiService {
     }
 
     getPoibyCoordinate(data: any) {
+
       console.log(data)
       return this.http.get(this.baseUrl + "pois/show" + "?poi_latitude=" + data.lat + "&" + "poi_longitude=" + data.lng);
     }
