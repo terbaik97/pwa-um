@@ -5,14 +5,13 @@
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content fullscreen>
   <ion-card class="bigSection">
     <ion-row class="headerBadges">
       <ion-col>
-        <ion-card class="headerBadgesCard"><ion-card-title class="headerBadge">Login</ion-card-title></ion-card>
+        <ion-card class="headerBadgesCard"><ion-card-title class="headerBadge">Add new place</ion-card-title></ion-card>
       </ion-col>
       <ion-col >
      </ion-col>
@@ -32,7 +31,7 @@
                     <h2>Login (1) time</h2>
                   </ion-badge>
                 </ion-card-subtitle>
-                <ion-button disabled={{buttonClaimedLogin1}} class="claimModal" color="light" (click)="toClaimLoginModal1()">Claim</ion-button>
+                <ion-button [disabled]="buttonClaimedLogin1" class="claimModal" color="light" (click)="toClaimLoginModal1()">Claim</ion-button>
               </ion-col>
               <ion-col size="4">
                 <ion-img class="loginImage" src="assets/badges/login.png"></ion-img>
@@ -226,4 +225,3 @@
   </ion-row>
 </ion-card>
 </ion-content>
-

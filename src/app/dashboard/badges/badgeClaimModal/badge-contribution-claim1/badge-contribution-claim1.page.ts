@@ -29,7 +29,7 @@ export class BadgeContributionClaim1Page implements OnInit {
   update(id, record) {
     let recordBorder = {};
     recordBorder['claimedContBadge1'] = record;
-    this.firebaseService.update_claimed_badge(id, recordBorder);
+    this.firebaseService.update_claimed_badge(id,recordBorder);
   }
 
 }

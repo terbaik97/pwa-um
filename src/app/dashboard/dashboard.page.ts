@@ -13,6 +13,10 @@ import { BorderDisplayPage } from './borderDisplayModal/border-display/border-di
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
+  //progress graph
+  percentEdit=100
+  percentReport=20;
+  //badge
   badgeList = [];
   currentbadge1={};
   currentbadge2: any;

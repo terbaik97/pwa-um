@@ -120,4 +120,43 @@
       </ion-card>
     </ion-col>
   </ion-row>
+  <br>
+  <ion-title>Roles Progress</ion-title>
+  <br>
+  <ion-row>
+    <ion-col>
+      <ion-card class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Edit Progress</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentEdit"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#FA6EFE'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
+              [animationDuration]="1000" ></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Report Progress</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentReport"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#FA6EFE'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
+              [animationDuration]="1000" ></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+    </ion-col>
+  </ion-row>
 </ion-content>

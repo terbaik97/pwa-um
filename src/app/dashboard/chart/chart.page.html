@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-title>Chart</ion-title>
     <ion-buttons slot="start">
@@ -16,6 +16,11 @@
       </ion-card-header>
       <ion-card-content>
         <canvas #barCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+        <!-- <ul>
+          <li *ngFor='let doc of this.chartDaily'>
+              {{doc.field}}
+          </li>
+        </ul> -->
       </ion-card-content>
     </ion-card>
   </div>

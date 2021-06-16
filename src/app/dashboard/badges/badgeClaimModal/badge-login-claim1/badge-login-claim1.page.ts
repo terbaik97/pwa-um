@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class BadgeLoginClaim1Page implements OnInit {
 
   public claimedLoginBadge1: any;
   constructor(private modalCtr: ModalController,
-    private firebaseService: FirebaseService) { }
+    private firebaseService: FirebaseService,
+    private _authService:AuthService) { }
 
   ngOnInit() {
   }
@@ -23,7 +25,7 @@ export class BadgeLoginClaim1Page implements OnInit {
 
   buttonClaim(){
     this.claimedLoginBadge1=true;
-    this.update('1', this.claimedLoginBadge1);
+    this.update(this._authService.getUserId(), this.claimedLoginBadge1);
     this.close();
   }
 
