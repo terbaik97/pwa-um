@@ -10,6 +10,11 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class BorderDisplayPage implements OnInit {
 
+  //usable
+  public usableBorder: any;
+  public usableBorder2: any;
+  //
+
   public borderForm: FormGroup;
   public submitAttempt: boolean = false;
   public borderDisplayChosen: any[];
@@ -22,6 +27,33 @@ export class BorderDisplayPage implements OnInit {
     this.borderForm = formbuilder.group({
       borderDisplayChosen: ['',Validators.required],
     });
+
+       //usable
+       this.firebaseService.read_current_badge().subscribe(data => {
+        
+        this.borderList = data.map(e => {
+          return {
+            id: e.payload.doc.id,
+            borderChosen1: e.payload.doc.data()['borderChosen1'],
+            borderChosen2: e.payload.doc.data()['borderChosen2'],
+            borderChosen3: e.payload.doc.data()['borderChosen3'],
+            borderDisplayChosen: e.payload.doc.data()['borderDisplayChosen'],
+            usableBorder: e.payload.doc.data()['usableBorder'],
+            usableBorder2: e.payload.doc.data()['usableBorder2'],
+          };
+        })
+        // console.log(this.badgeList);
+        for(let i = 0; i < this.borderList.length; i++){
+          // this.usableBadge1.push(days[this.convertedDate[i].getDay()]);
+          if(this.borderList[i].id === 'ab77defe-3508-4715-845c-8cb40eb0fb3f'){
+            this.usableBorder = this.borderList[i].usableBorder;
+            this.usableBorder2 = this.borderList[i].usableBorder2;
+          }
+        }
+        // console.log(this.usableBadge1);
+      });
+      //
+
   }
 
   ngOnInit() {}
@@ -35,7 +67,7 @@ export class BorderDisplayPage implements OnInit {
 
         else {
           this.borderDisplayChosen=this.borderForm.value;
-          this.updateRecord('1', this.borderDisplayChosen);
+          this.updateRecord('ab77defe-3508-4715-845c-8cb40eb0fb3f', this.borderDisplayChosen);
           this.modalCtrl.dismiss(this.borderForm);
         }
   }

@@ -13,12 +13,15 @@
     <ion-col>
       <ion-row>
         <ion-col >
+          <ion-img  class="knightLeft" src="assets/dashboard/knight_left.png"></ion-img>
+          <ion-img  class="backLeft" src="assets/dashboard/background.png"></ion-img>
         </ion-col>
         <ion-card class="profileCard">
           <ion-card-content>
             <ion-col>
               <ion-img class="pictureProfile" src="assets/badges/contribution.png"></ion-img>
               <div [ngSwitch]="currentborder">
+                <ion-img *ngSwitchCase="'default'" class="pictureBorderDefault" src="assets/border/golden.png"></ion-img>
                 <ion-img *ngSwitchCase="'badge1'" class="pictureBorder" src="assets/border/pinkBorder.png"></ion-img>
                 <ion-img *ngSwitchCase="'badge2'" class="pictureBorder1" src="assets/border/glowBorder.png"></ion-img>
               </div>
@@ -32,6 +35,8 @@
           </ion-card-content>
         </ion-card>
         <ion-col >
+          <ion-img  class="knightRight" src="assets/dashboard/knight_left.png"></ion-img>
+          <ion-img  class="backRight" src="assets/dashboard/background.png"></ion-img>
         </ion-col>
       </ion-row>
     </ion-col>
@@ -71,12 +76,24 @@
     <ion-col>
       <ion-card class="displayBadge">
         <ion-card-content class="badge1">
-          <ion-img *ngIf="currentbadge1" class="loginImage" src="assets/badges/login.png"></ion-img>
+          <!-- <ion-img *ngIf="currentbadge1" class="loginImage" src="assets/badges/login.png"></ion-img> -->
           <div [ngSwitch]="currentbadge1">
+            <ion-img *ngSwitchCase="'badge1'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge1'" class="loginImageBorder" src="assets/badges/border1.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge2'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge2'" class="loginImageBorder" src="assets/badges/border2.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge3'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge3'" class="loginImageBorder" src="assets/badges/border3.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge4'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge4'" class="loginImageBorder" src="assets/badges/border4.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge5'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge5'" class="loginImageBorder" src="assets/badges/border1.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge6'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge6'" class="loginImageBorder" src="assets/badges/border2.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge7'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge7'" class="loginImageBorder" src="assets/badges/border3.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge8'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge8'" class="loginImageBorder" src="assets/badges/border4.png"></ion-img>
           </div>
           <h1 *ngIf="!currentbadge1">No Badges Selected</h1>
           <ion-button class="loginImageButton" block (click)="badgeModal1()">
@@ -90,10 +107,22 @@
         <ion-card-content class="badge1">
           <ion-img *ngIf="currentbadge2" class="loginImage" src="assets/badges/login.png"></ion-img>
           <div [ngSwitch]="currentbadge2">
+            <ion-img *ngSwitchCase="'badge1'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge1'" class="loginImageBorder" src="assets/badges/border1.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge2'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge2'" class="loginImageBorder" src="assets/badges/border2.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge3'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge3'" class="loginImageBorder" src="assets/badges/border3.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge4'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge4'" class="loginImageBorder" src="assets/badges/border4.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge5'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge5'" class="loginImageBorder" src="assets/badges/border1.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge6'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge6'" class="loginImageBorder" src="assets/badges/border2.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge7'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge7'" class="loginImageBorder" src="assets/badges/border3.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge8'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge8'" class="loginImageBorder" src="assets/badges/border4.png"></ion-img>
           </div>
           <h1 *ngIf="!currentbadge2">No Badges Selected</h1>
           <ion-button class="loginImageButton" block (click)="badgeModal2()">
@@ -107,10 +136,22 @@
         <ion-card-content class="badge1">
           <ion-img *ngIf="currentbadge3" class="loginImage" src="assets/badges/login.png"></ion-img>
           <div [ngSwitch]="currentbadge3">
+            <ion-img *ngSwitchCase="'badge1'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge1'" class="loginImageBorder" src="assets/badges/border1.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge2'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge2'" class="loginImageBorder" src="assets/badges/border2.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge3'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge3'" class="loginImageBorder" src="assets/badges/border3.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge4'" class="loginImage" src="assets/badges/login.png"></ion-img>
             <ion-img *ngSwitchCase="'badge4'" class="loginImageBorder" src="assets/badges/border4.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge5'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge5'" class="loginImageBorder" src="assets/badges/border1.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge6'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge6'" class="loginImageBorder" src="assets/badges/border2.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge7'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge7'" class="loginImageBorder" src="assets/badges/border3.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge8'" class="contributionImage" src="assets/badges/contribution.png"></ion-img>
+            <ion-img *ngSwitchCase="'badge8'" class="loginImageBorder" src="assets/badges/border4.png"></ion-img>
           </div>
           <h1 *ngIf="!currentbadge3">No Badges Selected</h1>
           <ion-button class="loginImageButton" block (click)="badgeModal3()">
@@ -132,7 +173,7 @@
         <ion-card-content>
           <div align="center" style="margin-top:10%;">
             <circle-progress [percent]="percentEdit"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
-              [innerStrokeWidth]="10" [outerStrokeColor]="'#FA6EFE'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#FA6EFE'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
               [animationDuration]="1000" ></circle-progress>
           </div>
         </ion-card-content>
@@ -147,7 +188,7 @@
         <ion-card-content>
           <div align="center" style="margin-top:10%;">
             <circle-progress [percent]="percentReport"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
-              [innerStrokeWidth]="10" [outerStrokeColor]="'#FA6EFE'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#FA6EFE'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
               [animationDuration]="1000" ></circle-progress>
           </div>
         </ion-card-content>
@@ -155,8 +196,128 @@
       </ion-card>
     </ion-col>
   </ion-row>
+  <br>
+  <ion-title>Badges Progress    
+    <ion-button fill="outline" style="float: right;" (click)="toPageBadges()">View All</ion-button>
+  </ion-title>  
+  <br>
+  <ion-select [(ngModel)]="badgeType" name="badgesType" placeholder="Select Badges Type">
+    <ion-select-option value="create">Create</ion-select-option>
+    <ion-select-option value="update">Update</ion-select-option>
+  </ion-select>
+  <br>
   <ion-row>
     <ion-col>
+      <ion-card  *ngIf="badgeType == 'create'" class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Create Beginner</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentBadge1"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#2FE0E3'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
+              [animationDuration]="1000" ></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
+      <ion-card  *ngIf="badgeType == 'update'" class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Update Beginner</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentBadge5"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#2FE0E3'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
+              [animationDuration]="1000" ></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card *ngIf="badgeType == 'create'" class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Create Intermediate</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentBadge2"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#2FE0E3'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
+              [animationDuration]="1000" ></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
+      <ion-card  *ngIf="badgeType == 'update'" class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Update Intermediate</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentBadge6"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#2FE0E3'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
+              [animationDuration]="1000" ></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card *ngIf="badgeType == 'create'" class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Create Expert</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentBadge3"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#2FE0E3'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
+              [animationDuration]="1000" ></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
+      <ion-card  *ngIf="badgeType == 'update'" class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Update Expert</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentBadge7"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#2FE0E3'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
+              [animationDuration]="1000" ></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card *ngIf="badgeType == 'create'" class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Create Perfect</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentBadge4"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#2FE0E3'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
+              [animationDuration]="1000" ></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
+      <ion-card  *ngIf="badgeType == 'update'" class="roleProgress">
+        <ion-card-header>
+          <ion-card-title color="primary" class="roleTitle">Update Perfect</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div align="center" style="margin-top:10%;">
+            <circle-progress [percent]="percentBadge8"  [space]="-10" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="10" [outerStrokeColor]="'#2FE0E3'" [innerStrokeColor]="'#A9A9A9'" [animation]="true"
+              [animationDuration]="1000"></circle-progress>
+          </div>
+        </ion-card-content>
+        <br>
+      </ion-card>
     </ion-col>
   </ion-row>
 </ion-content>

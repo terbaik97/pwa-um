@@ -16,10 +16,44 @@ ion-content {
   }
 }
 
+.knightRight{
+  position: absolute;
+  width: 50em;
+  left:-9em;
+  z-index:3;
+}
+
+.backRight{
+  position: absolute;
+  width: 20em;
+  left: 11em;
+  z-index:2;
+}
+
+.knightLeft{
+  position: absolute;
+  width: 50em;
+  left:-9em;
+  z-index:3;
+}
+
+.backLeft{
+  position: absolute;
+  width: 20em;
+  left: 0em;
+  z-index:2;
+}
+
 .pictureProfile {
   width: 200px;
   bottom: -180px;
   left: 30px;
+}
+
+.pictureBorderDefault{
+  width: 330px;
+  bottom: -245px;
+  left: -34px;
 }
 
 .pictureBorder {
@@ -51,6 +85,14 @@ ion-content {
   z-index: 3;
   bottom: 100px;
   left: 80px;
+}
+
+.contributionImage {
+  position: absolute;
+  width: 230px;
+  z-index: 3;
+  bottom: 130px;
+  left: 115px;
 }
 
 .loginImageBorder {
@@ -100,4 +142,11 @@ ion-title {
 .roleTitle{
   font-size: 2em;
   font-weight: 900 !important; 
+}
+
+ion-select {
+  background-color: white;
+  color: black;
+  width: 10em;
+  left: 1em;
 }

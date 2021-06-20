@@ -9,6 +9,16 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./badge1.page.scss'],
 })
 export class Badge1Page implements OnInit {
+  //usable
+  public usableBadge1: any;
+  public usableBadge2: any;
+  public usableBadge3: any;
+  public usableBadge4: any;
+  public usableBadge5: any;
+  public usableBadge6: any;
+  public usableBadge7: any;
+  public usableBadge8: any;
+  //
   public borderForm: FormGroup;
   public submitAttempt: boolean = false;
   public borderChosen1: any[];
@@ -21,6 +31,45 @@ export class Badge1Page implements OnInit {
     this.borderForm = formbuilder.group({
       borderChosen1: ['',Validators.required],
     });
+
+    //usable
+    this.firebaseService.read_current_badge().subscribe(data => {
+        
+      this.badgeList = data.map(e => {
+        return {
+          id: e.payload.doc.id,
+          borderChosen1: e.payload.doc.data()['borderChosen1'],
+          borderChosen2: e.payload.doc.data()['borderChosen2'],
+          borderChosen3: e.payload.doc.data()['borderChosen3'],
+          borderDisplayChosen: e.payload.doc.data()['borderDisplayChosen'],
+          usableBadge1: e.payload.doc.data()['usableBadge1'],
+          usableBadge2: e.payload.doc.data()['usableBadge2'],
+          usableBadge3: e.payload.doc.data()['usableBadge3'],
+          usableBadge4: e.payload.doc.data()['usableBadge4'],
+          usableBadge5: e.payload.doc.data()['usableBadge5'],
+          usableBadge6: e.payload.doc.data()['usableBadge6'],
+          usableBadge7: e.payload.doc.data()['usableBadge7'],
+          usableBadge8: e.payload.doc.data()['usableBadge8'],
+          usableBorder: e.payload.doc.data()['usableBorder'],
+        };
+      })
+      // console.log(this.badgeList);
+      for(let i = 0; i < this.badgeList.length; i++){
+        // this.usableBadge1.push(days[this.convertedDate[i].getDay()]);
+        if(this.badgeList[i].id === 'ab77defe-3508-4715-845c-8cb40eb0fb3f'){
+          this.usableBadge1 = this.badgeList[i].usableBadge1;
+          this.usableBadge2 = this.badgeList[i].usableBadge2;
+          this.usableBadge3 = this.badgeList[i].usableBadge3;
+          this.usableBadge4 = this.badgeList[i].usableBadge4;
+          this.usableBadge5 = this.badgeList[i].usableBadge5;
+          this.usableBadge6 = this.badgeList[i].usableBadge6;
+          this.usableBadge7 = this.badgeList[i].usableBadge7;
+          this.usableBadge8 = this.badgeList[i].usableBadge8;
+        }
+      }
+      // console.log(this.usableBadge1);
+    });
+    //
   }
 
   ngOnInit() {}
@@ -34,7 +83,7 @@ export class Badge1Page implements OnInit {
 
         else {
           this.borderChosen1=this.borderForm.value;
-          this.updateRecord('1', this.borderChosen1);
+          this.updateRecord('ab77defe-3508-4715-845c-8cb40eb0fb3f', this.borderChosen1);
           this.viewCtrl.dismiss(this.borderForm);
         }
   }

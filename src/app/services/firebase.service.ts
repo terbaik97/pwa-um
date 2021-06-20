@@ -4,6 +4,23 @@ import { AuthService } from './auth.service';
 import { Observable } from 'rxjs'; 
 import { map } from 'rxjs/operators';
 
+const badgeChosen = { 
+  borderChosen1: '', 
+  borderChosen2: '', 
+  borderChosen3:'', 
+  borderDisplayChosen: '' ,
+  usableBorder: '',
+  usableBorder2:'',
+  usableBadge1:'', 
+  usableBadge2: '', 
+  usableBadge3:'', 
+  usableBadge4:'',
+  usableBadge5:'',
+  usableBadge6:'',
+  usableBadge7:'',
+  usableBadge8:'',
+ };
+
 @Injectable({
   providedIn: 'root'
 })
@@ -56,6 +73,17 @@ export class FirebaseService {
     this.firestore.doc(this.collectionProfile + '/' + recordID).update(record);
   }
 
+  read_user(){
+    return this.firestore.collection(this.collectionProfile).snapshotChanges();
+  }
+
+  create_current_badge(){
+      return  this.firestore
+          .collection(this.collectionName).doc('ab77defe-3508-4715-845c-8cb40eb0fb3f')
+          .set(badgeChosen)
+          // .then(response => { console.log(response) }, error => reject(error));
+  }
+
   read_current_badge() {
     return this.firestore.collection(this.collectionName).snapshotChanges();
   }
@@ -84,6 +112,11 @@ export class FirebaseService {
     this.firestore.doc(this.collectionClaimed + '/' + recordID).update(record);
   }
 
+  //usable badge
+  update_usable_badge(recordID, record){
+    console.log(record);
+    this.firestore.doc('Current-Badge' + '/' + recordID).update(record);
+  }
 
   // create user_actions
   create_user_actions(record: any , user_actions: any) {
@@ -122,17 +155,10 @@ export class FirebaseService {
     } 
   }
 
-  read_chart() {
-   return  this.firestore
-    .collection("user_actions").doc('ab77defe-3508-4715-845c-8cb40eb0fb3f').collection('update')
-    .get()
-    .subscribe((ss) => {
-      ss.docs.forEach((doc) => {
-        this.chartPoints.push(doc.data());
-        // console.log(this.chartPoints);
-      });
-    });
+  read_user_actions(){
+    return this.firestore.collection(this.collectionClaimed).snapshotChanges();
   }
+  
 
 }
 
